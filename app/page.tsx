@@ -1,11 +1,9 @@
-"use client";
+import Link from "next/link";
 
-import DiscoverProducts from "@/components/Soufiane/DiscoverProducts";
+export default function Page() {
+return (
+    <div className="w-full flex flex-col items-center">
 
-export default function Home() {
-  return (
-    <main className="w-full bg-gray-50">
-      <DiscoverProducts />
-    </main>
-  );
+    </div>
+);
 }
