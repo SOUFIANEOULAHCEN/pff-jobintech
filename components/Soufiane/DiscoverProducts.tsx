@@ -118,7 +118,7 @@ const PRODUCTS: Product[] = [
   },
 ];
 
-const FILTERS = ["Category", "Price Range", "Rating", "Creator"];
+const FILTERS = ["Category", "Price Range", "Rating", "Creator",'test'];
 
 const FOOTER_LINKS = {
   Marketplace: ["About", "Blog", "Jobs", "Brand"],
