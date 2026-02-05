@@ -3,8 +3,8 @@ import {
   Geist,
   Geist_Mono,
   Inter,
-  Cal_Sans,
-  Vend_Sans,
+  Poppins,
+  Manrope,
 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/theme-provider";
@@ -16,13 +16,14 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-const CalSans = Cal_Sans({
+const CalSans = Poppins({
   weight: "400",
   variable: "--font-cal-sans",
   subsets: ["latin"],
 });
 
-const VendSans = Vend_Sans({
+const VendSans = Manrope({
+  weight: "400",
   variable: "--font-vend-sans",
   subsets: ["latin"],
 });
