@@ -3,11 +3,13 @@ import AppSidebar from "@/components/dashboard/Sidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="w-full h-screen flex">
+    <div className="h-screen w-full overflow-hidden flex">
       <AppSidebar />
-      <div className="overflow-y-auto lg:w-[89%] w-full">
+
+      {/* Scrollable main content */}
+      <main className="flex-1 overflow-y-auto p-6">
         {children}
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }

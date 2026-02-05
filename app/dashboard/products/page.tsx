@@ -1,8 +1,13 @@
+"use client";
 import ProductDashboardCard from "@/components/dashboard/products dashboard/ProductDashboardCard";
+import { ProductDataTable } from "@/components/dashboard/products dashboard/ProductDataTable";
 import ProductModal from "@/components/Modals/ProductModal";
-import React from "react";
+import { Button } from "@/components/ui/button";
+import { Toggle } from "@/components/ui/toggle";
+import { Layout, Table } from "lucide-react";
+import React, { useState } from "react";
 
-function page() {
+function Page() {
   const mockProducts = [
     {
       title: "Wireless Headphones",
@@ -114,7 +119,7 @@ function page() {
       discount: 25,
     },
   ];
-
+  const [view, setView] = useState<string>("cards");
   return (
     <div className="w-full flex flex-col p-5">
       <div className="w-full flex items-center p-5">
@@ -127,17 +132,24 @@ function page() {
             </span>
           </p>
         </div>
-        <div className="w-full flex items-center justify-end">
+        <div className="w-full flex items-center justify-end gap-1.5">
+          <Toggle className="hidden lg:flex h-12" onClick={() => setView(view === "cards" ? "table" : "cards")}>
+            Change View {view === "cards" ? <Layout /> : <Table />}
+          </Toggle>
           <ProductModal />
         </div>
       </div>
       <div className="w-full flex flex-col items-center lg:flex-row flex-wrap p-5 gap-3">
-        {mockProducts.map((item, idx) => (
-          <ProductDashboardCard data={item} key={idx} />
-        ))}
+        {view === "cards" ? (
+          mockProducts.map((item, idx) => (
+            <ProductDashboardCard data={item} key={idx} />
+          ))
+        ) : (
+          <ProductDataTable products={mockProducts} />
+        )}
       </div>
     </div>
   );
 }
 
-export default page;
+export default Page;
