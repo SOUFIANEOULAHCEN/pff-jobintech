@@ -18,7 +18,7 @@ export default function AboutPage() {
         y: 100,
         opacity: 0,
         duration: 1,
-        stagger: 0.3,
+        stagger: 0.2,
         ease: "power4.out",
       });
 
