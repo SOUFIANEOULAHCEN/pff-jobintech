@@ -19,7 +19,7 @@ export default function AboutPage() {
         opacity: 0,
         duration: 1,
         stagger: 0.2,
-        ease: "power4.out",
+        ease: "power4.in",
       });
 
       // Story Section Animation
